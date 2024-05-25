@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @JsonSerialize
-public class CreateTaskRequest {
+public class TaskRequest {
     @NotBlank(message = "field {task} should not be empty")
     private String task;
 }

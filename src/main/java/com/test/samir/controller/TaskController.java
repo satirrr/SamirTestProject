@@ -1,7 +1,8 @@
 package com.test.samir.controller;
 
-import com.test.samir.model.dto.request.CreateTaskRequest;
-import com.test.samir.model.dto.response.CreateTaskResponse;
+import com.test.samir.model.dto.request.MarkCompletedRequest;
+import com.test.samir.model.dto.request.TaskRequest;
+import com.test.samir.model.dto.response.TaskResponse;
 import com.test.samir.service.TaskService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -19,10 +20,18 @@ public class TaskController {
     TaskService taskService;
 
     @PostMapping("/create")
-    public ResponseEntity<CreateTaskResponse> createTask(
-            @Valid @RequestBody CreateTaskRequest createTaskRequest,
+    public ResponseEntity<TaskResponse> createTask(
+            @Valid @RequestBody TaskRequest req,
             HttpServletRequest request
     ){
-        return taskService.createTask(createTaskRequest);
+        return taskService.createTask(req);
+    }
+
+    @PostMapping("/mark-complete")
+    public ResponseEntity<TaskResponse> createTask(
+            @Valid @RequestBody MarkCompletedRequest req,
+            HttpServletRequest request
+    ){
+        return taskService.markTaskCompleted(req);
     }
 }

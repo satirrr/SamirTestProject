@@ -7,6 +7,6 @@ import lombok.Data;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CreateTaskResponse extends BaseResponse {
+public class TaskResponse extends BaseResponse {
     private Task task;
 }

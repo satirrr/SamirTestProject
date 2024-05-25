@@ -26,3 +26,7 @@ spring:
   h2:
     console:
       enabled: true
+security:
+  jwt:
+    secret-key: db1f2e9c-1919-4400-9f04-78f93c61d1ea
+    issuer: samir test API

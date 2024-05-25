@@ -39,7 +39,7 @@ public class TokenController {
         JwtClaimsSet claims = JwtClaimsSet.builder()
                 .issuer(jwtIssuer)
                 .issuedAt(now)
-                .expiresAt(now.plusSeconds(300))
+                .expiresAt(now.plusSeconds(6 * 300))
                 .build();
 
         NimbusJwtEncoder encoder = new NimbusJwtEncoder(

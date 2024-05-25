@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Integer> {
     @Query(value = "SELECT * FROM TASK WHERE completed = false", nativeQuery = true)
-    List<Task> findAllByCompleted();
+    List<Task> findAllIncompleted();
 
     @Query(value = "SELECT * FROM TASK WHERE completed = false AND id = :taskId order by created_date DESC LIMIT 1", nativeQuery = true)
     Task findByCompleted(@Param("taskId") Integer taskId);

@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: samir-test-todo
+  profiles:
+    active: dev
